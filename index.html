@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Capturador de Expressões regulares</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Continuado por Lucas Chagas Ribeiro, → de Alura">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--_______________________↓Bootstrap↓_______________________-->
+    <meta name="Ver Ver fotosport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body class="container bg-dark text-info">
+
+    <h2 class="text-left p-5 text-center display-3 text-primary">Capturador de Expressões Regulares</h2>
+
+    <nav id="navbar-example2" class="navbar bg-body-tertiary rounded-top bg-secondary px-3 mb-2">
+        <a class="navbar-brand text-dark" href="#"><span class="h4"><strong>Cheat Sheet</strong></span></a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#scrollspyHeading1">Expressões Regulares</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#scrollspyHeading2">Expressões Regulares com grupos</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">Exemplos</a>
+                <ul class="dropdown-menu bg-secondary">
+                    <li><a class="dropdown-item text-dark" href="#scrollspyHeading3">Expressões Regulares</a></li>
+
+                    <li><a class="dropdown-item text-dark" href="#scrollspyHeading4">Expressões Regulares com grupos</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary bg-gradient text-secondary p-3 rounded-bottom "
+        tabindex="0">
+        <h5 class="text-decoration-underline text-info" id="scrollspyHeading1">Expressões Regulares</h5>
+        <p>
+            <strong>.</strong> : Corresponde a qualquer caractere, exceto nova linha </br>
+            <strong>^</strong> : Corresponde ao início da string </br>
+            <strong>$</strong> : Corresponde ao final da string </br>
+            <strong>*</strong> : Corresponde a zero ou mais ocorrências do padrão anterior </br>
+            <strong>+</strong> : Corresponde a uma ou mais ocorrências do padrão anterior </br>
+            <strong>?</strong> : Corresponde a zero ou uma ocorrência do padrão anterior (Torna o padrão anterior
+            opcional) </br>
+            <strong>|</strong> : Corresponde a qualquer uma das alternativas separadas por "|" </br>
+            <strong>\\</strong> : Escapa um caractere especial </br>
+            <strong>[]</strong> : Corresponde a qualquer caractere dentro dos colchetes </br>
+            <strong>[^]</strong> : Corresponde a qualquer caractere que não esteja dentro dos colchetes </br>
+            <strong>( )</strong> : Cria um grupo de captura, que pode ser referenciado posteriormente </br>
+            <strong>\b</strong> : Corresponde a uma borda de palavra (início ou fim de uma palavra) </br>
+            <strong>\B</strong> : Corresponde a qualquer lugar que não seja uma borda de palavra </br>
+            <strong>{m,n}</strong> : Corresponde a m a n ocorrências do padrão anterior </br>
+            <strong>{m,}</strong> : Corresponde a pelo menos m ocorrências do padrão anterior </br>
+            <strong>{,n}</strong> : Corresponde a no máximo n ocorrências do padrão anterior </br>
+            <strong>\d</strong> : Corresponde a qualquer dígito decimal </br>
+            <strong>\D</strong> : Corresponde a qualquer caractere que não seja um dígito decimal </br>
+            <strong>\w</strong> : Corresponde a qualquer caractere alfanumérico, incluindo letras, números e sublinhados
+            </br>
+            <strong>\W</strong> : Corresponde a qualquer caractere que não seja alfanumérico </br>
+            <strong>\s</strong> : Corresponde a qualquer caractere de espaço em branco, incluindo espaço, tabulação e
+            nova linha </br>
+            <strong>\S</strong> : Corresponde a qualquer caractere que não seja um espaço em branco </br>
+            <strong>\A</strong> : Corresponde ao início da string, ignorando a opção MULTILINE </br>
+            <strong>\Z</strong> : Corresponde ao final da string, ignorando a opção MULTILINE </br>
+            <strong>\G</strong> : Corresponde à posição onde a correspondência anterior terminou </br>
+            <strong>\n</strong> : Corresponde a uma nova linha </br>
+            <strong>\t</strong> : Corresponde a um tabulador </br>
+            <strong>\r</strong> : Corresponde a um retorno de carro </br>
+            <strong>*?, +?, ??, {m,n}?</strong> : Operadores de quantificadores preguiçosos </br></br>
+        </p>
+        <h5 class="text-decoration-underline text-info" id="scrollspyHeading2">Expressões Regulares com grupos</h5>
+        <p>
+            <strong>(?P&lt;name&gt;pattern)</strong> : Define um grupo de captura nomeado que pode ser referenciado por
+            seu nome </br>
+            <strong>(?P=name)</strong> : Referencia um grupo de captura nomeado </br>
+            <strong>(?i)</strong> : Ativa a correspondência sem diferenciação entre maiúsculas e minúsculas </br>
+            <strong>(?s)</strong> : Faz com que o ponto corresponda a qualquer caractere, incluindo nova linha </br>
+            <strong>(?=pattern)</strong> : Corresponde a uma posição seguida pelo padrão especificado, sem incluí-lo na
+            correspondência </br>
+            <strong>(?!pattern)</strong> : Corresponde a uma posição não seguida pelo padrão especificado </br>
+            <strong>(?&lt=pattern)</strong> : Corresponde a uma posição precedida pelo padrão especificado, sem
+            incluí-lo na correspondência </br>
+            <strong>(?&lt!pattern)</strong> : Corresponde a uma posição não precedida pelo padrão especificado </br>
+            <strong>(?P=name)</strong> : Referencia um grupo de captura nomeado </br>
+            <strong>(?P=name)pattern(?(name)yes|no)</strong> : Verifica se o grupo de captura nomeado existe e
+            corresponde ao padrão especificado </br>
+            <strong>(?P&lt;name&gt;pattern){m,n}</strong> : Corresponde a m a n ocorrências do padrão nomeado </br>
+            <strong>(?P=name){m,n}</strong> : Referencia o padrão nomeado m a n vezes </br>
+            <strong>\p{name}</strong> : Corresponde a qualquer caractere que tenha a propriedade Unicode especificada
+            por name </br>
+            <strong>\P{name}</strong> : Corresponde a qualquer caractere que não tenha a propriedade Unicode
+            especificada por name </br>
+            <strong>(?a)</strong> : Faz com que o padrão seja interpretado como ASCII </br>
+            <strong>(?L)</strong> : Faz com que o padrão seja interpretado como Unicode </br>
+            <strong>(?m)</strong> : Ativa a correspondência multilinha </br>
+            <strong>(?x)</strong> : Permite que você use espaços e comentários no padrão sem afetar a correspondência
+            </br>
+            <strong>(?imsx-imsx:pattern)</strong> : Aplica opções diferentes a diferentes partes do padrão </br>
+            <strong>(?#comment)</strong> : Insere um comentário no padrão, que é ignorado pela expressão regular </br>
+            <strong>(?P&lt;name&gt;pattern)\k&lt;name&gt;</strong> : Corresponde a duas ocorrências consecutivas do
+            padrão nomeado </br>
+            <strong>\A(pattern)</strong> : Corresponde ao padrão somente no início da string </br>
+            <strong>(pattern)\Z</strong> : Corresponde ao padrão somente no final da string </br>
+            <strong>\b(pattern)\b</strong> : Corresponde ao padrão somente se for uma palavra inteira </br>
+            <strong>\B(pattern)\B</strong> : Corresponde ao padrão somente se não for uma palavra inteira </br>
+            <strong>(pattern)?</strong> : Torna o padrão opcional, correspondendo a zero ou uma ocorrência do padrão
+            </br>
+            <strong>(pattern)*</strong> : Corresponde a zero ou mais ocorrências do padrão </br>
+            <strong>(pattern)+</strong> : Corresponde a uma ou mais ocorrências do padrão </br>
+            <strong>(pattern){n}</strong> : Corresponde exatamente a n ocorrências do padrão </br>
+            <strong>(pattern){m,n}</strong> : Corresponde de m a n ocorrências do padrão </br>
+            <strong>(pattern){m,}</strong> : Corresponde a pelo menos m ocorrências do padrão </br>
+            <strong>(pattern)\3</strong> : Corresponde a uma ocorrência do padrão repetido quatro vezes consecutivas
+            </br>
+            <strong>(pattern)\9</strong> : Corresponde a uma ocorrência do padrão repetido nove vezes consecutivas </br>
+            <strong>(?i)</strong> : Faz a correspondência sem diferenciar maiúsculas e minúsculas </br>
+            <strong>(?s)</strong> : Faz a correspondência em várias linhas </br>
+            <strong>(?m)</strong> : Faz a correspondência em modo multiline </br>
+            <strong>(?x)</strong> : Ignora espaços em branco e comentários </br>
+            <strong>(?P&lt;name&gt;)</strong> : Define um grupo nomeado </br>
+            <strong>\1, \2, ...</strong> : Referencia um grupo capturado </br>
+            <strong>(?P=name)</strong> : Faz a correspondência com um grupo nomeado anteriormente </br>
+            <strong>(?=...)</strong> : Faz a correspondência com um padrão seguido por outro padrão </br>
+            <strong>(?!...)</strong> : Faz a correspondência com um padrão que não é seguido por outro padrão </br>
+            <strong>(?&lt=...)</strong> : Faz a correspondência com um padrão precedido por outro padrão </br>
+            <strong>(?&lt!...)</strong> : Faz a correspondência com um padrão que não é precedido por outro padrão </br>
+            <strong>(?#...)</strong> : Comentário inline </br></br>
+        </p>
+        <h5 class="text-decoration-underline text-info" id="scrollspyHeading3">Exemplos de Expressões Regulares</h5>
+        <p>
+            <strong>^[A-Za-z]+$</strong> : Somente letras de A a Z, maiúsculas ou minúsculas. </br>
+            <strong>^\d{3}-\d{2}-\d{4}$</strong> : Número de Seguro Social dos Estados Unidos (formato: XXX-XX-XXXX).
+            </br>
+            <strong>^\d{10}$</strong> : Número de telefone com 10 dígitos. </br>
+            <strong>^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$</strong> : Endereço de e-mail válido. </br>
+            <strong>^[0-9a-fA-F]{6}$</strong> : Cor hexadecimal de seis dígitos. </br>
+            <strong>^\d{1,2}\/\d{1,2}\/\d{4}$</strong> : Data no formato mm/dd/yyyy. </br>
+            <strong>^[a-zA-Z]+\d+$</strong> : Nome de usuário que começa com uma ou mais letras seguidas de um ou mais
+            dígitos. </br>
+            <strong>^\d+$</strong> : Apenas números inteiros. </br>
+            <strong>^\d+(\.\d+)?$</strong> : Números inteiros ou decimais. </br>
+            <strong>^[a-zA-Z0-9]+$</strong> : Somente letras e números. </br>
+            <strong>^[a-zA-Z]+\s[a-zA-Z]+$</strong> : Nome completo (primeiro e último nome) com apenas letras. </br>
+            <strong>^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$</strong> : URLs começando com http:// ou https://. </br>
+            <strong>^(\+55)?(\d{2})?[6-9]\d{8}$</strong> : Número de telefone celular brasileiro com DDD e prefixo de
+            operadora opcional. </br>
+            <strong>^(([01]?\d|2[0-3]):([0-5]?\d))$</strong> : Hora válida no formato hh:mm. </br>
+            <strong>^\d{1,3}(,\d{3})*(\.\d+)?$</strong> : Número com separador de milhares e ponto decimal. </br>
+            <strong>^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$</strong> : Nome completo (primeiro e último nome) com
+            pontuação e caracteres especiais permitidos. </br>
+            <strong>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</strong> : Endereço de e-mail válido com caracteres
+            especiais permitidos. </br>
+            <strong>^[-+]?\d+(\.\d+)?$</strong> : Números inteiros ou decimais, incluindo negativos e positivos. </br>
+            <strong>^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$</strong> : Senha com pelo menos 8 caracteres, pelo
+            menos uma letra maiúscula, uma letra minúscula e um número. </br>
+            <strong>^\d{5}(-\d{4})?$</strong> : Código postal dos Estados Unidos (formato: XXXXX ou XXXXX-XXXX). </br>
+            <strong>^\d{2}\/\d{2}\/\d{4}$</strong> : Data no formato dd/mm/yyyy. </br>
+            <strong>^([01]\d|2[0-3]):([0-5]\d)$</strong> : Hora válida no formato hh:mm. </br>
+            <strong>^[A-Z]{2}\d{4}[A-Z]{2}$</strong> : padrão de uma placa de carro comum em alguns países, como o Reino
+            Unido e a Irlanda.
+        </p> </br></br>
+        <h5 class="text-decoration-underline text-info" id="scrollspyHeading4">Exemplos de Expressões Regulares com grupos</h5>
+        <p>
+            <strong>(ab)+</strong> : corresponde a uma ou mais ocorrências consecutivas de "ab" </br>
+            <strong>(a|b)*</strong> : corresponde a zero ou mais ocorrências consecutivas de "a" ou "b" </br>
+            <strong>(a{3})*</strong> : corresponde a zero ou mais ocorrências consecutivas de "aaa" </br>
+            <strong>(a{2,4}){3}</strong> : corresponde a três ocorrências consecutivas de "aa", "aaa", "aaaa" ou "aaaaa"
+            </br>
+            <strong>(ab){2,}(ba){2,}</strong> : corresponde a duas ou mais ocorrências consecutivas de "ab" seguidas de
+            duas ou mais ocorrências consecutivas de "ba" </br>
+            <strong>(a(bc|de)f)+</strong> : corresponde a uma ou mais ocorrências consecutivas de "a" seguidas de "bc"
+            ou "de" seguidas de "f" </br>
+            <strong>(\d+\.\d{2})?</strong> : corresponde a um número decimal com duas casas decimais, opcionalmente
+            precedido por um ou mais dígitos </br>
+            <strong>(https?://)?(www\.)?google\.com</strong> : corresponde a "http://" ou "https://", seguido
+            opcionalmente de "www.", seguido de "google.com" </br>
+            <strong>((\d{3})?:)?\d{3}-\d{4}</strong> : corresponde a um número de telefone no formato "XXX-XXXX" ou
+            "XXX-XXX-XXXX", opcionalmente precedido por um código de área de três dígitos </br>
+            <strong>(?:\d+\.)+\d+</strong> : corresponde a uma sequência de números separados por pontos, sem capturar
+            nenhum grupo </br>
+            <strong>^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$])[\w\d@#$]{8,}$</strong> : corresponde a uma senha que
+            contenha pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial, e tenha no
+            mínimo 8 caracteres </br>
+            <strong>([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?</strong> : corresponde a uma hora no formato "HH:MM" ou
+            "HH:MM:SS", onde as horas variam de 00 a 23 e os minutos e segundos variam de 00 a 59. </br></br>
+        </p>
+    </div>
+
+    <form class="form">
+
+        <div class="form-group pt-4">
+            <label class="h5" for="target">Target text (texto alvo)</label>
+            <textarea class="form-control bg-dark text-info" value="" rows="5" id="target" utocomplete="off" required autofocus placeholder="Digite um target"></textarea>
+        </div>
+
+        <div class="form-group pt-4">
+            <label class="h5" for="pattern">Pattern (Expressão Regular)</label>
+            <input type="text" id="pattern" class="form-control bg-dark text-info" value="" autocomplete="off" required
+                placeholder="Digite um pattern" />
+        </div>
+
+        <div class="d-flex pt-5">
+            <div class="form-group">
+                <button class="btn btn-primary pt-2" onclick="executa(event)">Executar Regex</button>
+            </div>
+            <div class="form-check d-flex flex-column">
+                <label><input type="checkbox" id="mostraIndex" value="true" /> Mostra índice </label>
+                <label><input type="checkbox" id="mostraGrupos" value="true" /> Mostra grupos </label>
+            </div>
+        </div>
+
+        <div class="form-group pt-4">
+            <label class="h5" for="resultado" id="labelResultados">Matches (Resultados)</label>
+            <input type="text" id="resultado" class="form-control bg-dark text-info" value="" readonly />
+        </div>
+
+        <div class="form-group pt-4">
+            <label class="h5" for="highlightText" id="labelHighlight">Highlight (Capturas)</label>
+            <div class="h4 bg-secondary text-dark rounded-2 p-1" id="highlightText"><span class="text-dark h5">&nbsp;&nbsp;&nbsp;Execute uma expressão regular que o texto capturado aparecerá aqui destacado...</span></div>
+        </div>
+
+    </form>
+
+    <div class="form-group pt-5 pb-5 ps-2 pe-2 mb-5">
+        <textarea class="form-control bg-dark text-info" rows="4" id="comment" placeholder="Faça suas anotações opacionalmente aqui..."></textarea>
+    </div>
+
+    <script src="js/regex.js"></script>
+</body>
+
+</html>
